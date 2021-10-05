@@ -24,6 +24,8 @@ public class Card {
         for(int i=0;i<8;i++){
             x=rand.nextInt(10,99);
             aux = aux + x;
+            if(i%2==1)
+                aux=aux+" ";
         }
         return aux;
     }

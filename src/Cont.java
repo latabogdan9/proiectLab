@@ -4,13 +4,15 @@ public class Cont {
     private String cnp;
     private int suma;
     private int id;
-    public Cont(String nume, String prenume, String cnp, int id,int suma) {
+    Card card;
+    public Cont(String nume, String prenume, String cnp, int id,int suma,Card card) {
 
         this.nume = nume;
         this.prenume = prenume;
         this.cnp = cnp;
         this.id = id;
         this.suma = suma;
+        this.card = card;
     }
 
     public String getCnp() {

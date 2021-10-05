@@ -1,10 +1,10 @@
 public class Cont {
-    String nume;
-    String prenume;
+    private String nume;
+    private String prenume;
     private String cnp;
-    float suma;
-    int id;
-    public Cont(String nume, String prenume, String cnp, int id,float suma) {
+    private int suma;
+    private int id;
+    public Cont(String nume, String prenume, String cnp, int id,int suma) {
 
         this.nume = nume;
         this.prenume = prenume;
@@ -15,5 +15,30 @@ public class Cont {
 
     public String getCnp() {
         return cnp;
+    }
+
+    public String getNume() {
+        return nume;
+    }
+
+    public String getPrenume() {
+        return prenume;
+    }
+
+    public float getSuma() {
+        return suma;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void addSuma(int suma) {
+        this.suma = this.suma + suma;
+    }
+
+    public void withdrawSuma(int suma) {
+            this.suma = this.suma - suma;
+
     }
 }

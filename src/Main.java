@@ -13,10 +13,13 @@ public class Main {
         int stop=0;
         int id = 0;
         String bank, nume, prenume, cnp;
-        Cont c[] = new Cont[10];
+
+        Cont aux;
+
+        Bank banca[] = new Bank[10];
+        banca[0] = new Bank(0,null);
         while (stop==0){
 
-            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
             Scanner scan = new Scanner(System.in);
             System.out.println("Alegeti o optiune:");
@@ -32,8 +35,7 @@ public class Main {
             }
             if(op == 1) {
                 id++;
-                System.out.println("Introduceti banca la care doriti sa va faceti cont: ");
-                bank = scan.next();
+
                 System.out.println("Introduceti numele dumneavoasra: ");
                 nume = scan.next();
                 System.out.println("Introduceti prenumele dumneavoasra: ");
@@ -41,11 +43,23 @@ public class Main {
                 System.out.println("Introduceti CNP-ul dumneavoasra: ");
                 cnp = scan.next();
 
-                c[id] = new Cont(bank,nume, prenume, cnp, id);
+                aux = new Cont(nume, prenume, cnp, id,0);
+                banca[id] = new Bank(id,aux);
+                banca[0].contNou(banca[0].getNumarConturi());
             }
             if(op == 2){
                 System.out.println("Introduceti CNP-ul dumneavoastra: ");
-
+                cnp = scan.next();
+                for(int i=1;i<=banca[0].getNumarConturi();i++){
+                    if(banca[i].c.getCnp().equals(cnp)){
+                        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                        System.out.println("Ati intrat cu succes in cont!");
+                    }
+                    else {
+                        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+                        System.out.println("CNP-ul introdus nu corespunde nici unui cont existent!");
+                    }
+                }
             }
         }
     }

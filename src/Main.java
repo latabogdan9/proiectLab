@@ -17,6 +17,8 @@ public class Main {
 
         Cont aux;
 
+
+
         Bank banca[] = new Bank[10];
         banca[0] = new Bank(0,null);
         while (stop==0){
@@ -107,8 +109,6 @@ public class Main {
                                     }
                             }
                         }
-
-
                     }
                     else {
                         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");

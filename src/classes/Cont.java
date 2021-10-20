@@ -1,11 +1,15 @@
-public class Cont {
+package classes;
+
+import gui.Main;
+
+public class Cont extends Main {
     private String nume;
     private String prenume;
     private String cnp;
     private int suma;
     private int id;
-    Card card;
-    public Cont(String nume, String prenume, String cnp, int id,int suma,Card card) {
+    public Card card;
+    public Cont(String nume, String prenume, String cnp, int id, int suma, Card card) {
 
         this.nume = nume;
         this.prenume = prenume;

@@ -1,5 +1,10 @@
+package classes;
+
+import gui.Main;
+import interfaces.ICard;
+
 import java.util.Random;
-public class Card {
+public class Card extends Main implements ICard {
 
     Random rand = new Random();
     int x;
@@ -45,5 +50,11 @@ public class Card {
         this.pin = pin;
         this.numarCard = generareNumarCard();
         this.dataExp = generareDataExp();
+    }
+
+    @Override
+    public void afisare(Bank banca) {
+        System.out.println("\nNumar card: " + banca.c.card.getNumarCard());
+        System.out.println("Data expirare card: " + banca.c.card.getDataExp() + "\n\n");
     }
 }

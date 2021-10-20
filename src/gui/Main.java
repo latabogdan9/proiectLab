@@ -1,15 +1,96 @@
+package gui;
+
+import classes.Bank;
+import classes.Card;
+import classes.Cont;
+import interfaces.ICard;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
+
+
+
+
 public class Main {
+
+    private JPanel Panel;
+    private JButton iesireButton;
+    private JButton intrareInContButton;
+    private JButton creareContButton;
+    private JTextPane bancaTextPane;
+
+
+    public static Bank exemplu = new Bank(0,null);
+
+    public static void setO(Bank a,int x){
+        banca[x]=a;
+    }
+
+
+
+
+    public static int id=0;
+
+    public static Bank banca[] = new Bank[10];
+
+    public static int stop=0;
+
+
+
+    public Main(){
+
+
+
+        creareContButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                JFrame cframe = new JFrame("frame2");
+                cframe.setContentPane(new CreareCont().cc);
+                cframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                cframe.setLocationRelativeTo(null);
+                cframe.setSize(500,500);
+                cframe.setVisible(true);
+
+
+
+
+            }
+        });
+
+        iesireButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        intrareInContButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("frame");
+                frame.setContentPane(new IntrareCont().ic);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setSize(500,500);
+                frame.setVisible(true);
+
+            }
+        });
+    }
+
     public static void main(String[] args) {
-        System.out.println(" /$$$$$$$");
-        System.out.println("| $$__  $$ ");
-        System.out.println("| $$  \\ $$  /$$$$$$  /$$$$$$$   /$$$$$$$  /$$$$$$ ");
-        System.out.println("| $$$$$$$  |____  $$| $$__  $$ /$$_____/ |____  $$");
-        System.out.println("| $$__  $$  /$$$$$$$| $$  \\ $$| $$        /$$$$$$$");
-        System.out.println("| $$  \\ $$ /$$__  $$| $$  | $$| $$       /$$__  $$");
-        System.out.println("| $$$$$$$/|  $$$$$$$| $$  | $$|  $$$$$$$|  $$$$$$$");
-        System.out.println("|_______/  \\_______/|__/  |__/ \\_______/ \\_______/");
-        int op,op1;
+        banca[0] = new Bank(0,null);
+        JFrame frame = new JFrame("frame");
+        frame.setContentPane(new Main().Panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setSize(500,500);
+        frame.setVisible(true);
+       /* int op,op1;
         int stop=0,stop1=0;
         int id = 0;
         int suma;
@@ -19,10 +100,10 @@ public class Main {
 
         Cont aux;
 
-
-
         Bank banca[] = new Bank[10];
         banca[0] = new Bank(0,null);
+        banca[1]=exemplu;
+
         while (stop==0){
 
 
@@ -57,7 +138,7 @@ public class Main {
             if(op == 2){
                 System.out.println("Introduceti CNP-ul dumneavoastra: ");
                 cnp = scan.next();
-                for(int i=1;i<=banca[0].getNumarConturi();i++){
+                for(int i=1;i<=2;i++){
                     if(banca[i].c.getCnp().equals(cnp)) {
                         System.out.println("Introduceti codul de securitate al cardului(PIN): ");
                         pin = scan.nextInt();
@@ -117,8 +198,7 @@ public class Main {
                                         }
                                 }
                                 if(op1 == 5){
-                                    System.out.println("\nNumar card: " + banca[i].c.card.getNumarCard());
-                                    System.out.println("Data expirare card: " + banca[i].c.card.getDataExp() + "\n\n");
+                                    banca[i].c.card.afisare(banca[i]);
 
                                 }
                             }
@@ -132,6 +212,11 @@ public class Main {
                 }
             }
         }
+
+        */
     }
+
+
+
 }
 

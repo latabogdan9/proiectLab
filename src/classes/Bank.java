@@ -1,6 +1,10 @@
-public class Bank {
+package classes;
 
-    Cont c;
+import gui.Main;
+
+public class Bank extends Main {
+
+    public Cont c;
     private int numarConturi;
 
 
